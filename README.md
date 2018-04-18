@@ -1,7 +1,12 @@
 # Stools-python
 > (Stringtools)
 
-How to use?
+Get it with
+
+`git clone https://github.com/ruzfi72/Stools-python.git && cd Stools-python`
+
+
+#### How to use?
 you can use it by directly running it or can also use the options directly as below :
 
 `~ $ python stools.py {string} {options}`
