@@ -1,5 +1,19 @@
 #!/usr/bin/python
-import os,sys,base64
+import os,sys,base64, string
+letters_lower = string.ascii_lowercase
+letters_upper = string.ascii_uppercase
+
+shifted = []
+
+def caesar(shift, inp):
+    for x in inp:
+        if x.strip() and x in letters_lower:
+            shifted.append(letters_lower[(letters_lower.index(x) + shift) % 26])
+        elif x.strip() and x in letters_upper:
+            shifted.append(letters_upper[(letters_upper.index(x) + shift) % 26])
+        else:
+            shifted.append(x)
+    return ''.join(shifted)
 
 def header():
 	os.system('clear')
@@ -32,6 +46,7 @@ def process():
 6. Base64 Encode
 7. Base32 Decode
 8. Base32 Encode
+9. Shift Character
 ''')
 
 	if len(sys.argv) == 1:
@@ -73,6 +88,12 @@ def process():
 			print(base64.b32encode(string()))
 		except TypeError:
 			print("Something has wrong..Incorrect padding")
+	elif options == "9":
+		try:
+			shift = input("Shift Char: ")
+			print(caesar(shift, string()))
+		except:
+			print("Something has wrong")
 	else:
 		print('Please enter available number above!')
 
