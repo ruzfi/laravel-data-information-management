@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <p>Name: {{ $user->firstName }} {{ $user->lastName }}</p>
                     <p>Email: {{ $user->email }}</p>
-                    <p>Role ID: {{ $user->role ?? 'N/A' }}</p>
+                    <p>Role ID: {{ $user->role }}</p>
                 </div>
             </div>
         </div>

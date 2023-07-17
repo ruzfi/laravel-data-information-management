@@ -9,34 +9,21 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-/**
-    public function up(): void
+    
+
+    public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
+            $table->id('userId');
+            $table->string('firstName');
+            $table->string('lastName');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
+            $table->unsignedBigInteger('role');
+            $table->foreign('role')->references('roleId')->on('roles');
             $table->timestamps();
         });
     }
-*/
-
-public function up()
-{
-    Schema::create('users', function (Blueprint $table) {
-        $table->id('userId');
-        $table->string('firstName');
-        $table->string('lastName');
-        $table->string('email')->unique();
-        $table->string('password');
-        $table->unsignedBigInteger('role');
-        $table->foreign('role')->references('roleId')->on('roles');
-        $table->timestamps();
-    });
-}
 
 
     /**

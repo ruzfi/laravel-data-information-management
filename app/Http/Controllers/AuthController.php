@@ -32,6 +32,5 @@ public function showLoginForm()
     {
         Auth::logout();
         return redirect()->route('login');
-        //return response()->json(['message' => 'Logout successful']);
     }
 }
